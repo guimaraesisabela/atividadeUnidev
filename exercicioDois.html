@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão Dois</title>
+</head>
+
+<body>
+
+  <style>
+    body {
+      background-color: palevioletred;
+    }
+    .azul {
+      color: blue;
+    }
+    .verde {
+      color: green;
+    }
+    .vermelho {
+      color: red;
+    }
+    .amarelo {
+      color: yellow;
+    }
+    .preto {
+      color: black;
+    }
+    .rosa {
+      color:pink;
+    }
+    .roxo {
+      color: blueviolet;
+    }
+    .marrom {
+      color: brown;
+    }
+    .laranja {
+      color: orange;
+    }
+    .cinza {
+      color: grey;
+    }
+    .branco {
+      color: white;
+    }
+  </style> 
+
+<div class="container">
+    <ul id="listaCores"></ul>
+
+    <input type="text" id="item" placeholder="Digite aqui o item">
+    <input type="text" id="cor" placeholder="Digite aqui a cor">
+    <button id="adicionarElemento">Adicionar</button>
+
+  </div>
+<script>
+document.getElementById("adicionarElemento").addEventListener("click", function() {
+  var itemInput = document.getElementById("item").value;
+  var corInput = document.getElementById("cor").value;
+  
+  //criando novo item LI
+  var novoElemento = document.createElement("li");
+  
+  // colocando o texto inserido no input em "novoElemento"
+  novoElemento.textContent = itemInput;
+  
+  // adicionando as cores a 'novo elemento'
+  novoElemento.classList.add(corInput);
+  
+  // indicando onde queremos adicionar esse novo elemento
+  var lista = document.getElementById("listaCores");
+  
+  // adicionando o elemento na lista
+  lista.appendChild(novoElemento);
+  
+  // limpando os inputs depois de adc o elemento
+  document.getElementById("item").value = "";
+  document.getElementById("cor").value = "";
+});
+</script>
+
+</body>
+</html>
+<!-- procurar como fazer para os elementos da lista ficarem em baixo do input e nao em cima -->

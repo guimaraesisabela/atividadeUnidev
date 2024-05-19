@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão Um</title>
+</head>
+
+
+<body style="background-color: pink;">
+
+    <h2> Exercício 1</h2>
+    <div>
+        <label>Digite seu nome:</label>
+        <input type="text" id="nome">
+    </div>
+    <div>
+        <label>Digite seu apelido:</label>
+        <input type="text" id="apelido">
+    </div>
+    <div>
+        <button id="btnTrocar">Trocar</button>
+    </div>
+
+    <script>
+        
+        let nomeInput = document.getElementById('nome');
+        let apelidoInput = document.getElementById('apelido');
+        let btnTrocar = document.getElementById('btnTrocar');
+
+        
+        btnTrocar.addEventListener("click", function(event) {
+            event.preventDefault(); 
+
+            let nomeValor = nomeInput.value;
+            let apelidoValor = apelidoInput.value;
+
+            nomeInput.value = apelidoValor;
+            apelidoInput.value = nomeValor;
+        });
+    </script>
+</body>
+</html>
