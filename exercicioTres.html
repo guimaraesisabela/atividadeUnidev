@@ -12,6 +12,36 @@
         <title>Questão Três</title>
     </head>
     <body>
+        <label for="nome">Digite aqui seu nome:</label>
+        <input type="text" id="nome">
+        <button type="button" id="validarBotao">Enviar</button>
+
+        <ul id="listaNomes">
         
+        </ul>
+
+        <script> 
+             document.getElementById('validarBotao').addEventListener('click', function() {
+             var nome = document.getElementById('nome').value.trim();
+                if (nome === "") {
+                    alert("Você esqueceu de informar o seu nome");
+                }
+            });
+            document.getElementById('validarBotao').addEventListener('click', function() {
+            var nome = document.getElementById('nome').value.trim();
+                if (nome === "") {
+                    alert("Você esqueceu de informar o seu nome");
+                } else if (nome.length < 3) {
+                    alert("O seu nome deve ter ao menos 3 dígitos");
+                } else {
+                    var li = document.createElement('li');
+                    li.textContent = nome;
+                    document.getElementById('listaNomes').appendChild(li);
+        
+                }
+             });
+
+
+         </script>
     </body>
     </html>
